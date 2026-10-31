@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ampred"
+version = "0.1.0"
+description = "Antimicrobial peptide prediction: ESM-2 embeddings vs composition features on the AMP Scanner v2 benchmark"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Zainab Javed", email = "276657223+zainab-123-spec@users.noreply.github.com"}]
+dependencies = ["numpy>=1.24", "scikit-learn>=1.3", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+esm = ["torch>=2.1", "transformers>=4.40"]
+
+[tool.setuptools.packages.find]
+include = ["ampred*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B"]
+ignore = ["B905"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
