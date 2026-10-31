@@ -1,0 +1,3 @@
+# Optional: needed only for ESM-2 embeddings (CPU wheels are fine)
+torch>=2.1
+transformers>=4.40
